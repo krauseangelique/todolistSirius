@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Borel&family=Luckiest+Guy&family=Pacifico&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Borel&family=Luckiest+Guy&family=Pacifico&display=swap'); */
 
 html { 
-    background: linear-gradient(white, rgb(102, 102, 102)) no-repeat center center fixed;
+    background: linear-gradient( rgb(97, 93, 93), white) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -14,26 +14,74 @@ body {
     align-items: center;
     font-family: 'Montserrat', sans-serif;
 }
-header img {
-    width: 164px;
-    object-fit: cover;
-    object-position: left bottom;
-}
-a{
-    font-size: 300%;
-    font-family: 'Borel', cursive;
-    font-family: 'Pacifico', cursive;
-    font-family: 'Luckiest Guy', cursive;
-    background-image : url(./images/irene-davila-m8KpeYUChIA-unsplash.jpg);
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip:  text;
-    color: transparent;
-   
-    
-    
+
+
+/* HEADER */
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
 }
 
+.image{
+    width: 260px;
+    padding: 30px 0;
+    position: relative;
+    border: 2px solid rgb(93,90,85);
+}
+
+header img {
+    width: 164px;
+    height:fit-content;
+    display: block;
+    margin: auto;    
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    text-align: center; 
+    line-height: 172px; 
+
+    /*
+    display: flex;
+    justify-content : center;
+    align-items: center;
+    flex-direction: column;
+    */
+
+    background-color: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: ease 1s; /* 0.6s; */
+}
+.content:hover{
+    opacity: 1;
+}
+
+.content a{
+    font-size: small;
+    font-weight: 700;
+    color: rgb(204, 227, 249); /*inherit;*/
+}
+/*
+.content > *{
+    transform: translateY(130px);
+    transition: transform 1s;
+}
+.content > *{
+    transform: translateY(0);
+
+}
+*/
+
+
+/* FORM */
 form {
     display: flex;
     align-items: center;
