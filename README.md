@@ -4,4 +4,7 @@ Add tasks for fun 😊
 
 
 
->Credited by :  **depositphotos** for illustration
+>Credited by :  **Lucas Ielli ** for explanations
+> ```Javascript
+output.innerHTML += `<li>...</li>`
+```

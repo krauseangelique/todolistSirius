@@ -80,12 +80,16 @@ header img {
 }
 */
 
+h1 {
+    font-weight: 300;
+}
 
 /* FORM */
 form {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    border: 2px solid yellow;
 }
 
 input {
@@ -111,9 +115,12 @@ input[type='submit']:hover {
     transition: ease 0.5s;
 }
 
+
+/* UL li injection */
 ul {
     margin: 0;
     padding: 0;
+    background-color: green;
 }
 
 li {
@@ -122,10 +129,6 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-h1 {
-    font-weight: 300;
 }
 
 p {
@@ -163,6 +166,7 @@ button {
 .undo::after {
     content: "Undo";
 }
+
 .taskComplete {
     text-decoration: line-through wavy hsl(0, 20%, 50%); 
     color: grey;
