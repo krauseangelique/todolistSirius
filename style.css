@@ -2,17 +2,35 @@
 
 /*@import url('https://fonts.googleapis.com/css2?family=Borel&family=Luckiest+Guy&family=Pacifico&display=swap'); */
 
+/* add variables  and box-sizing */
+:root {
+    --main-bg-color: rgb(97, 93, 93);
+    --main-color: rgb(44, 29, 29);
+}
+*{
+    box-sizing: border-box;
+}
+
 html { 
     background: linear-gradient( rgb(97, 93, 93), white) no-repeat center center fixed;
+    background-color: var(--main-bg-color);
     background-size: cover;
+
+    height: 100%;
+
 }
 
 body {
+    color: var(--main-color);
+
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+/* my own code : add margin and height */
+    margin: 0;
+    height: 100%;
 }
 
 
@@ -79,6 +97,29 @@ header img {
 
 }
 */
+/* ADD LOGO FROM GITHUB */
+/*
+.content a span::after{
+     A voir avec Jeremy pour l'after  
+    color:blanchedalmond; 
+    content: url(./images/github-logo-img.png); 
+    background-image: url(./images/github-logo-img.png);
+    background-repeat: no-repeat; 
+    background-color: transparent;
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: ease 0.4s;
+    max-height: 200px;
+    max-width: 200px;
+    background-size: 100px;
+    display: inline-block; 
+    background-attachment: fixed;
+    background-position: center;
+
+}
+*/
 
 h1 {
     font-weight: 300;
@@ -89,6 +130,8 @@ form {
     display: flex;
     align-items: center;
     margin-top: 20px;
+
+    /* to remove before ending */
     border: 2px solid yellow;
 }
 
@@ -103,6 +146,9 @@ input {
 input[type="text"] {
     width: 25rem;
     padding: 0px 10px;
+
+    /* to remove before ending */
+    background: violet;
 }
 
 input[type='submit'] {
@@ -120,6 +166,8 @@ input[type='submit']:hover {
 ul {
     margin: 0;
     padding: 0;
+
+     /* to remove before ending */
     background-color: green;
 }
 
@@ -151,6 +199,9 @@ button {
 }
 .done {
     background-color: rgba(153, 255, 0, 0.7);
+
+    /* text-decoration: underline wavy; */
+
 }
 .done::after{
     content: 'Done';
@@ -171,3 +222,9 @@ button {
     text-decoration: line-through wavy hsl(0, 20%, 50%); 
     color: grey;
 }
+
+/* tablets */
+/* @media tablets (max-width: 780px){
+
+    }
+*/
