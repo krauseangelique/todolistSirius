@@ -145,6 +145,7 @@ input {
 input[type="text"] {
     width: 25rem;
     padding: 0px 10px;
+   
 
     /* to remove before ending */
     background: violet;
