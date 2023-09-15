@@ -82,6 +82,9 @@ header img {
 }
 .content img{
     filter: invert(100%); /* black/white */
+    width: 60%;
+    top: 0;
+    
 }
 .content a{
     font-size: small;
@@ -89,7 +92,6 @@ header img {
     color: rgb(204, 227, 249); /*inherit;*/
 }
 .content a span:after{
-    /* !! Voir avec Jeremy */
     color: blanchedalmond;
     content:'';
     width: 100px;
@@ -130,7 +132,7 @@ h1 {
 form {
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 35px;
 
     /* !! to remove before ending */
     border: 2px solid yellow;
@@ -168,14 +170,19 @@ ul {
     display: flex;
     flex-direction: column;
      /* !! to remove before ending */
-    background-color: green;
+    
 }
 li {
     list-style: none;
     width: 35rem;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    margin: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: pink;
+    border-radius: 15px;
 }
 p {
     margin: 0;

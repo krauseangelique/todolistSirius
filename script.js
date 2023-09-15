@@ -38,6 +38,9 @@ function addTask(e) {
 
 // Event on the FORM
 form.addEventListener("submit", addTask);
+
+/* ----- */
+
 /**
  *  stages of the project :
  * 
@@ -51,14 +54,20 @@ Enregistrer toutes les tâches dans votre navigateur !
 // some informations credited by:
 /* https://fr.moonbooks.org/Articles/Comment-ajouter-un-nouveau-li-a-ul-en-utilisant-javascript-/#:~:text=Ajouter%20li%20%C3%A0%20ul%20en%20utilisant%20javascript%20Pour,text%20%3D%20document.createTextNode%20%28%27item%204%20%28added%20using%20javascript%29%27%29%3B */
 
-// choose the add ok button DONE
-let recherche = document.querySelectorAll("button[class=done]");
+/* choose to add ok button DONE */
+let recherche = output.getElementsByClassName("button[class=done]");
 console.log(recherche);
 
+// target sur le bouton done
+
+/* revoir à partir d'ici */
 for (let index = 0; index < recherche.length; index++) {
     const element = recherche[index];
-    
+    console.log(element);
 
+
+    
+/*
     recherche[index] = addEventListener("click", () => {
         element.removeAttribute("done");
         element.focus();
@@ -66,6 +75,9 @@ for (let index = 0; index < recherche.length; index++) {
         console.log("élément CLICKÉ");
 
     });
+*/
+
+
     
 }
 
