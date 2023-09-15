@@ -165,7 +165,8 @@ input[type='submit']:hover {
 ul {
     margin: 0;
     padding: 0;
-
+    display: flex;
+    flex-direction: column;
      /* !! to remove before ending */
     background-color: green;
 }
