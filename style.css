@@ -7,28 +7,31 @@
     --main-bg-color: rgb(97, 93, 93);
     --main-color: rgb(44, 29, 29);
 }
+
 *{
     box-sizing: border-box;
 }
+/* mobiles 
+@media (max-width: 480px) {
+}
+*/
+
 
 html { 
     background: linear-gradient( rgb(97, 93, 93), white) no-repeat center center fixed;
     background-color: var(--main-bg-color);
     background-size: cover;
-
     height: 100%;
-
 }
-
 body {
     color: var(--main-color);
-
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
-/* my own code : add margin and height */
+
+    /* my own code : add margin and height */
     margin: 0;
     height: 100%;
 }
@@ -42,14 +45,12 @@ body {
     align-items: flex-start;
     margin-top: 10px;
 }
-
 .image{
     width: 260px;
     padding: 30px 0;
     position: relative;
     border: 2px solid rgb(93,90,85);
 }
-
 header img {
     width: 164px;
     height:fit-content;
@@ -63,29 +64,48 @@ header img {
     top: 0;
     left: 0;
     position: absolute;
-
     text-align: center; 
     line-height: 172px; 
-
     /*
     display: flex;
     justify-content : center;
     align-items: center;
     flex-direction: column;
     */
-
     background-color: rgba(0,0,0,0.6);
     opacity: 0;
     transition: ease 1s; /* 0.6s; */
+    z-index: 2;
 }
 .content:hover{
     opacity: 1;
 }
-
+.content img{
+    filter: invert(100%); /* black/white */
+}
 .content a{
     font-size: small;
     font-weight: 700;
     color: rgb(204, 227, 249); /*inherit;*/
+}
+.content a span:after{
+    /* !! Voir avec Jeremy */
+    color: blanchedalmond;
+    content:'';
+    width: 100px;
+    height: 60px;
+    background-image: url(./images/github-logo-img.png);
+    background-repeat: no-repeat;
+    background-color: blanchedalmond;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: blanchedalmond;
+    cursor: pointer;
+    transition: ease 0.4s;
+    background-size: cover;
+    display: inline-block; /* !! ou block à tester */
+    background-attachment: fixed;
+    background-position: center;
 }
 /*
 .content > *{
@@ -97,44 +117,24 @@ header img {
 
 }
 */
-/* ADD LOGO FROM GITHUB */
-/*
-.content a span::after{
-     A voir avec Jeremy pour l'after  
-    color:blanchedalmond; 
-    content: url(./images/github-logo-img.png); 
-    background-image: url(./images/github-logo-img.png);
-    background-repeat: no-repeat; 
-    background-color: transparent;
-    background-clip: text; 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-    transition: ease 0.4s;
-    max-height: 200px;
-    max-width: 200px;
-    background-size: 100px;
-    display: inline-block; 
-    background-attachment: fixed;
-    background-position: center;
 
-}
-*/
 
+/* MAIN */
 h1 {
     font-weight: 300;
+    text-align: center;
+    margin-top: 60px;
 }
 
-/* FORM */
+    /* FORM */
 form {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
 
-    /* to remove before ending */
+    /* !! to remove before ending */
     border: 2px solid yellow;
 }
-
 input {
     height: 3rem;
     font-size: 18px;
@@ -142,7 +142,6 @@ input {
     border: 1px solid black;
     margin: 2px;
 }
-
 input[type="text"] {
     width: 25rem;
     padding: 0px 10px;
@@ -150,27 +149,25 @@ input[type="text"] {
     /* to remove before ending */
     background: violet;
 }
-
 input[type='submit'] {
+    /* !! must change the color for UI before ending */
     background: pink;
     cursor: pointer;
 }
-
 input[type='submit']:hover {
     transform: scale(1.1);
     transition: ease 0.5s;
 }
 
 
-/* UL li injection */
+    /* UL li injection via JS */
 ul {
     margin: 0;
     padding: 0;
 
-     /* to remove before ending */
+     /* !! to remove before ending */
     background-color: green;
 }
-
 li {
     list-style: none;
     width: 35rem;
@@ -178,7 +175,6 @@ li {
     justify-content: space-between;
     align-items: center;
 }
-
 p {
     margin: 0;
     max-width: calc(35rem - 9rem);
@@ -186,7 +182,6 @@ p {
     word-wrap: break-word;
     font-size: larger;
 }
-
 button {
     margin: 5px 0px 5px 0px;
     width: 4rem;
@@ -200,7 +195,7 @@ button {
 .done {
     background-color: rgba(153, 255, 0, 0.7);
 
-    /* text-decoration: underline wavy; */
+    /* !! .undo{text-decoration: underline wavy;} */
 
 }
 .done::after{
@@ -217,7 +212,6 @@ button {
 .undo::after {
     content: "Undo";
 }
-
 .taskComplete {
     text-decoration: line-through wavy hsl(0, 20%, 50%); 
     color: grey;
