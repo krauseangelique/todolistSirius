@@ -3,10 +3,10 @@ const form = document.getElementsByTagName("form")[0];
 
 const input = document.querySelector("input[type=text]");
 
-const output = document.getElementsByTagName("ul")[0];
+const output = document.getElementById("task-list");
 console.log(output);
 
-/* Add Task */
+/* Step 4: 3.Creation of a Add Task function */
 function addTask(e) {
 
   // Don't refresh the page!
@@ -33,11 +33,24 @@ function addTask(e) {
 
   }
 }
-//addTask(); // Error
-// console.log(taskValue); // Error
+
+// function delete task
+function deleteTask(event) {
+  // event.target est la cible de l'évènement (dans ce cas-ci un click) son résultat dépendra du bouton sur lequel l'utlisateur aura cliqué. Dans notre cas ce sera Done soit Delete.
+  const btnClicked = event.target;
+  console.log(btnClicked);
+  // if (condition) {
+    
+  // } else {
+    
+  // }
+  
+}
+
 
 // Event on the FORM
 form.addEventListener("submit", addTask);
+output.addEventListener("click", deleteTask);
 
 /* ----- */
 
