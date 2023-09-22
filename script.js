@@ -6,10 +6,12 @@ const input = document.querySelector("input[type=text]");
 const output = document.getElementById("task-list");
 console.log(output);
 
+const deleteButton = document.getElementsByClassName(" delete");
+
 /* Step 4: 3.Creation of a Add Task function */
 function addTask(e) {
 
-  // Don't refresh the page!
+  //Allows not to refresh the page and so to maintain the differents items visible !
   e.preventDefault();
   const taskValue = form[0].value;
 
@@ -37,13 +39,31 @@ function addTask(e) {
 // function delete task
 function deleteTask(event) {
   // event.target est la cible de l'évènement (dans ce cas-ci un click) son résultat dépendra du bouton sur lequel l'utlisateur aura cliqué. Dans notre cas ce sera Done soit Delete.
-  const btnClicked = event.target;
+  const btnClicked = event.target; // target permet de cibler la balise de départ
+  /* JavaScript closest()
+The closest() method in JavaScript is used to retrieve the closest ancestor, or parent of the element matches the selectors. If there is no ancestor found, the method returns null.
+This method traverses the element and its parents in the document tree, and the traversing continues until the first node is found that matches the provided selector string.
+Syntax
+targetElement.closest(selectors); 
+In the above syntax, selectors is a string containing a selector (like p:hover, etc.) used to find a node.
+récupérer le premier ancêtre commun : https://www.javatpoint.com/javascript-closest
+
+*/
   console.log(btnClicked);
-  // if (condition) {
+  const listItem = btnClicked.closest("li");
+  console.log(listItem);
+  
+// remove the listItem completely
+//  listItem.remove();
+
+// !! cela ne fonctionne pas donc voir etape 5 et etape 6
+  if (btnClicked == deleteButton) {
+    // remove the listItem completely
+    listItem.remove();
     
-  // } else {
-    
-  // }
+  }
+  
+  
   
 }
 
