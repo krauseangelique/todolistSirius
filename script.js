@@ -7,6 +7,7 @@ const output = document.getElementById("task-list");
 console.log(output);
 
 const deleteButton = document.getElementsByClassName(" delete");
+console.log(deleteButton);
 
 /* Step 4: 3.Creation of a Add Task function */
 function addTask(e) {
@@ -39,7 +40,9 @@ function addTask(e) {
 // function delete task
 function deleteTask(event) {
   // event.target est la cible de l'évènement (dans ce cas-ci un click) son résultat dépendra du bouton sur lequel l'utlisateur aura cliqué. Dans notre cas ce sera Done soit Delete.
+  console.log(event);
   const btnClicked = event.target; // target permet de cibler la balise de départ
+  console.log(btnClicked);
   /* JavaScript closest()
 The closest() method in JavaScript is used to retrieve the closest ancestor, or parent of the element matches the selectors. If there is no ancestor found, the method returns null.
 This method traverses the element and its parents in the document tree, and the traversing continues until the first node is found that matches the provided selector string.
