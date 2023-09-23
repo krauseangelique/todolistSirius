@@ -57,7 +57,7 @@ récupérer le premier ancêtre commun : https://www.javatpoint.com/javascript-c
 //  listItem.remove();
 
 // !! cela ne fonctionne pas donc voir etape 5 et etape 6
-  if (btnClicked == deleteButton) {
+  if (btnClicked === deleteButton) {
     // remove the listItem completely
     listItem.remove();
     
