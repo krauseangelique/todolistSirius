@@ -1,5 +1,7 @@
+// file OK
 console.log("Hello");
 
+// constants
 const form = document.getElementsByTagName("form")[0];
 const input = document.querySelector("input[type=text]");
 const output = document.getElementById("task-list");
@@ -36,6 +38,7 @@ function addTask(e) {
 // function delete task
 function deleteTask(event) {
   const taskValue = form[0].value;
+
   // event.target est la cible de l'évènement (dans ce cas-ci un click) son résultat dépendra du bouton sur lequel l'utlisateur aura cliqué. Dans notre cas ce sera Done soit Delete.
   console.log(event);
 
@@ -51,9 +54,12 @@ function deleteTask(event) {
     In the above syntax, selectors is a string containing a selector (like p:hover, etc.) used to find a node.
     récupérer le premier ancêtre commun : https://www.javatpoint.com/javascript-closest
 */
+
   const listItem = btnClicked.closest("li").firstElementChild;
   console.log(listItem);
 
+
+  // conditions for the different buttons
   if (btnClicked.classList[0] === "delete") {
 
     // remove the listItem completely
@@ -71,8 +77,8 @@ function deleteTask(event) {
     btnClicked.textContent = "Done";
     listItem.classList.remove("completed");
   }
-}
 
+}
 
 // Event on the FORM
 form.addEventListener("submit", addTask);
@@ -98,13 +104,9 @@ let recherche = output.getElementsByClassName("button[class=done]");
 console.log(recherche);
 
 // target sur le bouton done
-
-/* revoir à partir d'ici */
 for (let index = 0; index < recherche.length; index++) {
     const element = recherche[index];
     console.log(element);
-
-
     
 /*
     recherche[index] = addEventListener("click", () => {
@@ -115,8 +117,6 @@ for (let index = 0; index < recherche.length; index++) {
 
     });
 */
-
-
     
 }
 
