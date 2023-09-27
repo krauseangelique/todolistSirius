@@ -1,13 +1,9 @@
 console.log("Hello");
+
 const form = document.getElementsByTagName("form")[0];
-
 const input = document.querySelector("input[type=text]");
-
 const output = document.getElementById("task-list");
 console.log(output);
-
-const deleteButton = document.getElementsByClassName(" delete");
-console.log(deleteButton);
 
 /* Step 4: 3.Creation of a Add Task function */
 function addTask(e) {
@@ -24,7 +20,7 @@ function addTask(e) {
     output.innerHTML += `<li>
     <p>${taskValue}</p>
     <div>
-      <button class="done"></button>
+      <button class="done">Done</button>
       <button class="delete">
         Delete
       </button>
@@ -39,35 +35,42 @@ function addTask(e) {
 
 // function delete task
 function deleteTask(event) {
+  const taskValue = form[0].value;
   // event.target est la cible de l'évènement (dans ce cas-ci un click) son résultat dépendra du bouton sur lequel l'utlisateur aura cliqué. Dans notre cas ce sera Done soit Delete.
   console.log(event);
+
   const btnClicked = event.target; // target permet de cibler la balise de départ
   console.log(btnClicked);
+
+
   /* JavaScript closest()
-The closest() method in JavaScript is used to retrieve the closest ancestor, or parent of the element matches the selectors. If there is no ancestor found, the method returns null.
-This method traverses the element and its parents in the document tree, and the traversing continues until the first node is found that matches the provided selector string.
-Syntax
-targetElement.closest(selectors); 
-In the above syntax, selectors is a string containing a selector (like p:hover, etc.) used to find a node.
-récupérer le premier ancêtre commun : https://www.javatpoint.com/javascript-closest
-
+    The closest() method in JavaScript is used to retrieve the closest ancestor, or parent of the element matches the selectors. If there is no ancestor found, the method returns null.
+    This method traverses the element and its parents in the document tree, and the traversing continues until the first node is found that matches the provided selector string.
+    Syntax
+    targetElement.closest(selectors); 
+    In the above syntax, selectors is a string containing a selector (like p:hover, etc.) used to find a node.
+    récupérer le premier ancêtre commun : https://www.javatpoint.com/javascript-closest
 */
-  console.log(btnClicked);
-  const listItem = btnClicked.closest("li");
+  const listItem = btnClicked.closest("li").firstElementChild;
   console.log(listItem);
-  
-// remove the listItem completely
-//  listItem.remove();
 
-// !! cela ne fonctionne pas donc voir etape 5 et etape 6
-  if (btnClicked === deleteButton) {
+  if (btnClicked.classList[0] === "delete") {
+
     // remove the listItem completely
     listItem.remove();
     
+  } else if (btnClicked.classList[0] === "done") {
+    //console.log("It's done");
+   btnClicked.classList.remove("done");
+   btnClicked.classList.add("undo");
+   btnClicked.textContent = "Undo";
+   listItem.classList.add("completed");
+  } else if (btnClicked.classList[0] === "undo") {
+    btnClicked.classList.remove("undo");
+    btnClicked.classList.add("done");
+    btnClicked.textContent = "Done";
+    listItem.classList.remove("completed");
   }
-  
-  
-  
 }
 
 

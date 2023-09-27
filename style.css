@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/*@import url('https://fonts.googleapis.com/css2?family=Borel&family=Luckiest+Guy&family=Pacifico&display=swap'); */
-
 /* add variables  and box-sizing */
 :root {
     --main-bg-color: rgb(97, 93, 93);
@@ -11,11 +9,6 @@
 *{
     box-sizing: border-box;
 }
-/* mobiles 
-@media (max-width: 480px) {
-}
-*/
-
 
 html { 
     background: linear-gradient( rgb(97, 93, 93), white) no-repeat center center fixed;
@@ -31,7 +24,6 @@ body {
     align-items: center;
     font-family: 'Montserrat', sans-serif;
 
-    /* my own code : add margin and height */
     margin: 0;
     height: 100%;
 }
@@ -65,7 +57,7 @@ header img {
     left: 0;
     position: absolute;
     text-align: center; 
-    line-height: 172px; 
+    line-height: 109px; 
     /*
     display: flex;
     justify-content : center;
@@ -89,7 +81,7 @@ header img {
 .content a{
     font-size: small;
     font-weight: 700;
-    color: rgb(204, 227, 249); /*inherit;*/
+    color: rgb(204, 227, 249); 
 }
 .content a span:after{
     color: blanchedalmond;
@@ -105,20 +97,10 @@ header img {
     cursor: pointer;
     transition: ease 0.4s;
     background-size: cover;
-    display: inline-block; /* !! ou block à tester */
+    display: inline-block; 
     background-attachment: fixed;
     background-position: center;
 }
-/*
-.content > *{
-    transform: translateY(130px);
-    transition: transform 1s;
-}
-.content > *{
-    transform: translateY(0);
-
-}
-*/
 
 
 /* MAIN */
@@ -133,10 +115,10 @@ h1 {
 form {
     display: flex;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 
-    /* !! to remove before ending */
-    border: 2px solid yellow;
+   
 }
 input {
     height: 3rem;
@@ -148,19 +130,19 @@ input {
 input[type="text"] {
     width: 25rem;
     padding: 0px 10px;
+    margin-right: 12px;
    
-
-    /* to remove before ending */
     background: violet;
 }
 input[type='submit'] {
-    /* !! must change the color for UI before ending */
+    
     background: pink;
     cursor: pointer;
+    flex: 1;
 }
 input[type='submit']:hover {
     transform: scale(1.1);
-    transition: ease 0.5s;
+    transition: ease 0.5s;    
 }
 
 
@@ -205,31 +187,25 @@ button {
 }
 .done {
     background-color: rgba(153, 255, 0, 0.7);
-
-    /* !! .undo{text-decoration: underline wavy;} */
-
 }
-.done::after{
-    content: 'Done';
-}
+
 .delete {
     background-color: red;
+    margin-right: 5px;
 }
 .undo {
+    font-weight:700;
     background: rgba(0,0,0,0);
     color: blue;
     border: 1px solid blue;
+     /* !! .undo{text-decoration: underline wavy;} for the p via completed class */
 }
-.undo::after {
-    content: "Undo";
-}
-.taskComplete {
+/* Étape 6: Styliser les tâches complétées */
+/*
+  Retournez dans votre fichier script.js, il va falloir maintenant faire appel à votre classe .taskcompleted lorsque votre utilisateur clique sur le bouton "Done" (fait) qui devra se transformer en bouton "Undo" (annuler)
+
+*/
+.completed {
     text-decoration: line-through wavy hsl(0, 20%, 50%); 
     color: grey;
 }
-
-/* tablets */
-/* @media tablets (max-width: 780px){
-
-    }
-*/
