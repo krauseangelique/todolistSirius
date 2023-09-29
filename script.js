@@ -37,7 +37,6 @@ function addTask(e) {
 
 // function delete task
 function deleteTask(event) {
-  const taskValue = form[0].value;
 
   // event.target est la cible de l'évènement (dans ce cas-ci un click) son résultat dépendra du bouton sur lequel l'utlisateur aura cliqué. Dans notre cas ce sera Done soit Delete.
   console.log(event);
@@ -55,8 +54,8 @@ function deleteTask(event) {
     récupérer le premier ancêtre commun : https://www.javatpoint.com/javascript-closest
 */
 
-  const listItem = btnClicked.closest("li").firstElementChild;
-  console.log(listItem);
+  const listItem = btnClicked.closest("li");
+  console.log(listItem); // <li> ... </li>
 
 
   // conditions for the different buttons
@@ -64,18 +63,22 @@ function deleteTask(event) {
 
     // remove the listItem completely
     listItem.remove();
-    
-  } else if (btnClicked.classList[0] === "done") {
+  }
+
+  const Item =btnClicked.closest("li").firstElementChild;
+  
+   // conditions for the different buttons
+  if (btnClicked.classList[0] === "done") {
     //console.log("It's done");
    btnClicked.classList.remove("done");
    btnClicked.classList.add("undo");
    btnClicked.textContent = "Undo";
-   listItem.classList.add("completed");
+   Item.classList.add("completed");
   } else if (btnClicked.classList[0] === "undo") {
     btnClicked.classList.remove("undo");
     btnClicked.classList.add("done");
     btnClicked.textContent = "Done";
-    listItem.classList.remove("completed");
+    Item.classList.remove("completed");
   }
 
 }
@@ -107,16 +110,6 @@ console.log(recherche);
 for (let index = 0; index < recherche.length; index++) {
     const element = recherche[index];
     console.log(element);
-    
-/*
-    recherche[index] = addEventListener("click", () => {
-        element.removeAttribute("done");
-        element.focus();
-        element.innerText = "Undo";
-        console.log("élément CLICKÉ");
-
-    });
-*/
-    
+       
 }
 
